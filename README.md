@@ -12,7 +12,7 @@ To install NotionAI.js, you can use npm:
 npm install notionai
 ```
 
-## usage ：
+### usage
 
 ```
 // setting and import
