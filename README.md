@@ -20,7 +20,6 @@ The NotionAI class has four methods:
 
 - `translateText(language, text)`: This method takes a language and text as input and returns a result from the Notion API.
 
-
 The NotionAI class relies on the setting class for its configuration options, which include the Notion API token and space ID.
 
 To use the NotionAI class, you can import it and create a new instance with the Notion API token and space ID. Then, you can call any of its methods with the appropriate parameters to make a request to the Notion API.
