@@ -45,11 +45,9 @@ You can refer to https://github.com/HCYT/notionAI/issues/1 to learn how to get t
 
 ------------------------------------------
 
-The NotionAI class has four methods:
+The NotionAI supports multiple types:
 
-### Write supports multiple types
-
-#### mode1
+#### writing-mode1
 If you use the 'helpMeWrite' or 'helpMeDraft' option, you can follow this example
 
 ```
@@ -63,7 +61,7 @@ await notionAI.writing(TOPICS.helpMeDraft, prompt).then((text) => {
 });
 
 ```
-#### mode2
+#### writing-mode2
 
 If you use the 'helpMeEdit' option, you can follow this example
 
@@ -83,7 +81,7 @@ await notionAI.writing(TOPICS.helpMeEdit,prompt, pageTitle,pageContent,selectedT
 
 ```
 
-### mode3
+### writing-mode3
 
 If you use the 'continueWriting' option, you can follow this example
 
@@ -100,7 +98,7 @@ await notionAI.writing(TOPICS.helpMeEdit, pageTitle,previousContent,restContent)
     console.error(err);
 });
 ```
-### mode4
+### writing-mode4
 
 
 If you use the `summarize`,`improveWriting`,`fixSpellingGrammar`,`explainThis`,`makeLonger`,`makeShorter`,`findActionItems`,`simplifyLanguage` option, you can follow this example
@@ -152,8 +150,19 @@ This document will introduce you to the members of a Scrum team, including the S
 
 ### writingPrompt
 
-`writingPrompt(prompt, pageTitle, selectedText, pageContent)`: This method takes a type, title, and text as input and returns a result from the Notion API.
+pageTitle,selectedText,pageContent allow null,you can use ""
 
+####usage
+
+```
+writingPrompt(prompt, pageTitle, selectedText, pageContent)
+
+let prompt = "tell me a joke"
+writingPrompt(prompt, "", "", "")
+
+```
+
+#### You can refer to the following prompt list
 ```
 Brainstorm Ideas - A process of generating a large number of creative ideas or solutions to a problem through group discussion or individual brainstorming.
 
