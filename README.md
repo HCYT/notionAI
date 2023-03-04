@@ -34,11 +34,15 @@ await notionAI.writingPrompt(prompt, pageTitle, selectedText, pageContent).then(
 
 Make sure to replace process.env["TOKEN"] and process.env["SPACE_ID"] with your actual Notion API token and space ID, respectively.
 
+The NotionAI class relies on the setting class for its configuration options, which include the Notion API token and space ID.
+
+To use the NotionAI class, you can import it and create a new instance with the Notion API token and space ID. Then, you can call any of its methods with the appropriate parameters to make a request to the Notion API.
+
 ## How to get the token and spaceId
 
 Make sure you subscribe to NotionAI; otherwise, you will only be able to use it 20 times.
 
-editing ...
+You can refer to https://github.com/HCYT/notionAI/issues/1 to learn how to get the token and spaceId.
 
 
 ------------------------------------------
@@ -78,7 +82,9 @@ Result
 This document will introduce you to the members of a Scrum team, including the Scrum Master, the Product Owner, and the development team members.
 
 
-- `writingPrompt(prompt, pageTitle, selectedText, pageContent)`: This method takes a type, title, and text as input and returns a result from the Notion API.
+### writingPrompt
+
+`writingPrompt(prompt, pageTitle, selectedText, pageContent)`: This method takes a type, title, and text as input and returns a result from the Notion API.
 
 ```
 Brainstorm Ideas - A process of generating a large number of creative ideas or solutions to a problem through group discussion or individual brainstorming.
@@ -129,9 +135,6 @@ await notionAI.translateText(LANGUAGE.chinese, text).then((text) => {
 
 ```
 
-The NotionAI class relies on the setting class for its configuration options, which include the Notion API token and space ID.
-
-To use the NotionAI class, you can import it and create a new instance with the Notion API token and space ID. Then, you can call any of its methods with the appropriate parameters to make a request to the Notion API.
 
 
 
