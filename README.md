@@ -1,16 +1,24 @@
 # NotionAI.js
 
-This is a JavaScript module that provides a class called NotionAI for making requests to the Notion API. It extends the setting class, which provides the configuration options for the API request.
+NotionAI.js is a JavaScript library that provides a simple and convenient interface for interacting with the Notion API. It includes functions for writing prompts, changing the tone of text, translating text, and more.
+
+## Installation (not ready yet)
+
+To install NotionAI.js, you can use npm:
+
+```
+npm install notionai
+```
 
 The NotionAI class has four methods:
 
-`writingTopic(topic, prompt)`: This method takes a topic and prompt as input and returns a result from the Notion API.
+- `writingTopic(topic, prompt)`: This method takes a topic and prompt as input and returns a result from the Notion API.
 
-`changeTone(tone, text)`: This method takes a tone and text as input and returns a result from the Notion API.
+- `changeTone(tone, text)`: This method takes a tone and text as input and returns a result from the Notion API.
 
-`writingPromptType(type, title, text)`: This method takes a type, title, and text as input and returns a result from the Notion API.
+- `writingPromptType(type, title, text)`: This method takes a type, title, and text as input and returns a result from the Notion API.
 
-`translateText(language, text)`: This method takes a language and text as input and returns a result from the Notion API.
+- `translateText(language, text)`: This method takes a language and text as input and returns a result from the Notion API.
 
 
 The NotionAI class relies on the setting class for its configuration options, which include the Notion API token and space ID.
@@ -32,8 +40,15 @@ await notionAI.writingTopic(topic, prompt).then((text) => {
 
 Make sure to replace process.env["TOKEN"] and process.env["SPACE_ID"] with your actual Notion API token and space ID, respectively.
 
+
+## How to get the token and spaceId
+
+Make sure you subscribe to NotionAI; otherwise, you will only be able to use it 20 times.
+
+editing ...
+
 ## Contributing
-If you want to contribute to NotionAI, please read the contributing guide for instructions.
+Welcome to contribute to NotionAI.js by creating pull requests or issues. If you find any bugs or have suggestions for new features, please feel free to open an issue on the GitHub repository. We appreciate any contributions and will review them as soon as possible.
 
 ## License
 NotionAI is licensed under the MIT License.
