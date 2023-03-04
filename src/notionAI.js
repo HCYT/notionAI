@@ -2,7 +2,14 @@ import { setting } from './setting.js';
 
 export class NotionAI extends setting {
 
-
+    /**
+     * Sends a request to the Notion API based on the given type and arguments.
+     *
+     * @param {string} type - The type of action to be performed.
+     * @param {...*} args - The required parameters for the specific action.
+     * @returns {Promise<string>} - The result of the API request.
+     * @throws {Error} - If an invalid type is provided.
+     */
     async write(type, ...args) {
         let content = {};
         switch (type) {
