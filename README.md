@@ -48,7 +48,7 @@ You can refer to https://github.com/HCYT/notionAI/issues/1 to learn how to get t
 The NotionAI supports multiple types:
 
 #### writing-mode1
-If you use the 'helpMeWrite' or 'helpMeDraft' option, you can follow this example
+If you use the `helpMeWrite` or `helpMeDraft` option, you can follow this example
 
 ```
 let prompt="a joke"
@@ -63,7 +63,7 @@ await notionAI.writing(TOPICS.helpMeDraft, prompt).then((text) => {
 ```
 #### writing-mode2
 
-If you use the 'helpMeEdit' option, you can follow this example
+If you use the `helpMeEdit` option, you can follow this example
 
 ```
 let result="";
@@ -83,7 +83,7 @@ await notionAI.writing(TOPICS.helpMeEdit,prompt, pageTitle,pageContent,selectedT
 
 ### writing-mode3
 
-If you use the 'continueWriting' option, you can follow this example
+If you use the `continueWriting` option, you can follow this example
 
 ```
 let result="";
@@ -152,7 +152,7 @@ This document will introduce you to the members of a Scrum team, including the S
 
 pageTitle,selectedText,pageContent allow null,you can use ""
 
-####usage
+#### usage
 
 ```
 writingPrompt(prompt, pageTitle, selectedText, pageContent)
