@@ -83,6 +83,19 @@ You can translate to these language
 english, korean, chinese, japanese, spanish, russiab, french, german, italian, portuguese, dutch, indonesia, tagalog, vietnamese
 ```
 
+usage
+```
+let text = "This document provides an introduction to the composition of a Scrum team, including the Scrum Master, the Product Owner, and the development team members."
+
+await notionAI.translateText(LANGUAGE.chinese, text).then((text) => {
+    result = text;
+    console.log(`translateText "${topic}": ${result}`);
+}).catch((err) => {
+    console.error(err);
+});
+
+```
+
 The NotionAI class relies on the setting class for its configuration options, which include the Notion API token and space ID.
 
 To use the NotionAI class, you can import it and create a new instance with the Notion API token and space ID. Then, you can call any of its methods with the appropriate parameters to make a request to the Notion API.

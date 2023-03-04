@@ -45,7 +45,7 @@ let result = "";
 
 let text = "This document provides an introduction to the composition of a Scrum team, including the Scrum Master, the Product Owner, and the development team members."
 
-await notionAI.translateText(LANGUAGE.russiab, text).then((text) => {
+await notionAI.translateText(LANGUAGE.chinese, text).then((text) => {
     result = text;
     console.log(`translateText "${topic}": ${result}`);
 }).catch((err) => {
