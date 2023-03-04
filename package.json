@@ -1,0 +1,38 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@koa/router": "^12.0.0",
+    "axios": "^1.3.4",
+    "dotenv": "^16.0.3",
+    "es": "^0.8.0",
+    "esm": "^3.2.25",
+    "koa": "^2.14.1",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^12.0.0",
+    "node-fetch": "^3.3.0",
+    "uuid": "^9.0.0"
+  },
+  "name": "notionai",
+  "version": "1.0.0",
+  "description": "You can perform AI operations through the NotionAI API.",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HCYT/notionAI.git"
+  },
+  "keywords": [
+    "GPT-3",
+    "AI",
+    "notion"
+  ],
+  "author": "Danny H.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HCYT/notionAI/issues"
+  },
+  "homepage": "https://github.com/HCYT/notionAI#readme"
+}
