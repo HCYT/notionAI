@@ -6,7 +6,7 @@ const app = new Koa();
 import dotenv from 'dotenv';
 dotenv.config({ path: './.env' });
 const notionAI = new NotionAI(process.env["TOKEN"], process.env["SPACE_ID"]);
-import { TOPICS, TONE } from './src/types.js';
+import { TOPICS, TONE, LANGUAGE } from './src/types.js';
 
 let type = "";
 let title = "";
@@ -35,15 +35,22 @@ let result = "";
 // });
 
 
+// let text = "This document provides an introduction to the composition of a Scrum team, including the Scrum Master, the Product Owner, and the development team members."
+// await notionAI.changeTone(TONE.professional, text).then((text) => {
+//     result = text;
+//     console.log(`Writing with topic "${topic}": ${result}`);
+// }).catch((err) => {
+//     console.error(err);
+// });
+
 let text = "This document provides an introduction to the composition of a Scrum team, including the Scrum Master, the Product Owner, and the development team members."
-await notionAI.changeTone(TONE.professional, text).then((text) => {
+
+await notionAI.translateText(LANGUAGE.russiab, text).then((text) => {
     result = text;
-    console.log(`Writing with topic "${topic}": ${result}`);
+    console.log(`translateText "${topic}": ${result}`);
 }).catch((err) => {
     console.error(err);
 });
-
-
 
 
 

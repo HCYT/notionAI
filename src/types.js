@@ -13,8 +13,6 @@ const TOPICS = {
     makeShorter: 'makeShorter',
     findActionItems: 'findActionItems',
     simplifyLanguage: 'simplifyLanguage'
-
-
 };
 
 const TONE = {
@@ -24,6 +22,23 @@ const TONE = {
     confident: 'confident',
     friendly: 'friendly'
 }
+
+const LANGUAGE = {
+    english: 'english',
+    korean: 'korean',
+    chinese: 'chinese',
+    japanese: 'japanese',
+    spanish: 'spanish',
+    russiab: 'russiab',
+    french: 'french',
+    german: 'german',
+    italian: 'italian',
+    portuguese: 'portuguese',
+    dutch: 'dutch',
+    indonesia: 'indonesia',
+    tagalog: 'tagalog',
+    vietnamese: 'vietnamese'
+};
 
 // const PROMPT = {
 //     brainstormIdeas: "BrainstormIdeas",
@@ -40,4 +55,4 @@ const TONE = {
 //     salesEmail: "SalesEmail",
 //     recruitingEmail: "RecruitingEmail"
 // };
-export { TONE, TOPICS };
+export { TONE, TOPICS, LANGUAGE };
