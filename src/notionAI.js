@@ -1,12 +1,43 @@
 import { setting } from './setting.js';
 
 export class NotionAI extends setting {
-    async writingTopic(topic, prompt) {
+
+    //helpMeWrite
+
+    async helpMeWrite(type, pageTitle, previousContent, restContent, prompt) {
         const content = JSON.stringify({
-            type: topic,
+            type: type,
             prompt: prompt,
-            selectedText: '',
-            pageTitle: ''
+            pageTitle: pageTitle,
+            previousContent: previousContent,
+            restContent: restContent
+        });
+        const response = await this.request(content);
+        const result = this.parseResponse(response);
+        return result;
+    }
+
+    //continueWriting
+    async continueWriting(type, pageTitle, previousContent, restContent) {
+        const content = JSON.stringify({
+            type: type,
+            pageTitle: pageTitle,
+            previousContent: previousContent,
+            restContent: restContent
+        });
+        const response = await this.request(content);
+        const result = this.parseResponse(response);
+        return result;
+    }
+
+    // write article with prompt 
+    async writingPrompt(prompt, pageTitle = "", selectedText = "", pageContent = "") {
+        const content = JSON.stringify({
+            type: "helpMeEdit",
+            prompt: prompt,
+            selectedText: selectedText,
+            pageTitle: pageTitle,
+            pageContent: pageContent
         });
         const response = await this.request(content);
         const result = this.parseResponse(response);
@@ -25,16 +56,7 @@ export class NotionAI extends setting {
         return result;
     }
 
-    async writingPromptType(type, title, text) {
-        const content = JSON.stringify({
-            type: type,
-            pageTitle: title,
-            selectedText: text,
-        });
-        const response = await this.request(content);
-        const result = this.parseResponse(response);
-        return result;
-    }
+
 
     async translateText(language, text) {
         const content = JSON.stringify({

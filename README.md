@@ -15,8 +15,60 @@ The NotionAI class has four methods:
 - `writingTopic(topic, prompt)`: This method takes a topic and prompt as input and returns a result from the Notion API.
 
 - `changeTone(tone, text)`: This method takes a tone and text as input and returns a result from the Notion API.
+you can use the
+``` 
+    TONE.professional
+    TONE.casual
+    TONE.straightforward
+    TONE.confident
+    TONE.friendly
+```
+usage
 
-- `writingPromptType(type, title, text)`: This method takes a type, title, and text as input and returns a result from the Notion API.
+```
+let text = "This document provides an introduction to the composition of a Scrum team, including the Scrum Master, the Product Owner, and the development team members."
+await notionAI.changeTone(TONE.professional, text).then((text) => {
+    result = text;
+    console.log(`Writing with topic "${topic}": ${result}`);
+}).catch((err) => {
+    console.error(err);
+});
+
+
+```
+Result
+This document will introduce you to the members of a Scrum team, including the Scrum Master, the Product Owner, and the development team members.
+
+
+- `writingPrompt(prompt, pageTitle, selectedText, pageContent)`: This method takes a type, title, and text as input and returns a result from the Notion API.
+
+```
+Brainstorm Ideas - A process of generating a large number of creative ideas or solutions to a problem through group discussion or individual brainstorming.
+
+Blog Post - An online article or entry written in a blog format that covers a specific topic, typically written in an informal or conversational style.
+
+Outline - A structured plan or summary of a document, speech, or project, usually presented in bullet points or headings.
+
+Social Media Post - A message or update posted on a social media platform, such as Facebook, Twitter, or Instagram, to communicate with an audience and engage with them.
+
+Press Release - A written or recorded statement to the media announcing news, events, or product launches related to a business or organization.
+
+Creative Story - A narrative work of fiction or non-fiction that uses imaginative language, vivid imagery, and creative techniques to convey a message or entertain the reader.
+
+Essay - A short piece of writing that expresses the author's perspective or argument on a specific topic, typically written in a formal style and structured into paragraphs.
+
+Poem - A piece of writing that uses language, sound, and rhythm to evoke emotions, express thoughts or feelings, or convey a message.
+
+Meeting Agenda - A list of topics or items to be discussed during a meeting, usually arranged in a specific order and including the time allotted for each item.
+
+Pros and Cons List - A method of decision-making or analysis that lists the advantages and disadvantages of a particular choice or option.
+
+Job Description - A document that outlines the duties, responsibilities, and requirements of a particular job position.
+
+Sales Email - An email message sent to potential customers to introduce a product or service, highlight its features and benefits, and persuade them to make a purchase.
+
+Recruiting Email - An email message sent to job seekers to promote a job opportunity, explain the company's culture and values, and invite them to apply for the position.
+```
 
 - `translateText(language, text)`: This method takes a language and text as input and returns a result from the Notion API.
 
