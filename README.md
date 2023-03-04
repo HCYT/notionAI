@@ -38,7 +38,7 @@ Make sure to replace process.env["TOKEN"] and process.env["SPACE_ID"] with your 
 
 Make sure you subscribe to NotionAI; otherwise, you will only be able to use it 20 times.
 
-editing ...
+You can refer to #1 to learn how to get the token and spaceId.
 
 
 ------------------------------------------
