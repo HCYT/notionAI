@@ -51,8 +51,3 @@ await notionAI.translateText(LANGUAGE.chinese, text).then((text) => {
 }).catch((err) => {
     console.error(err);
 });
-
-
-
-
-//TODO: add example 
