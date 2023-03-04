@@ -15,7 +15,7 @@
   "name": "notionai",
   "version": "1.0.0",
   "description": "You can perform AI operations through the NotionAI API.",
-  "main": "app.js",
+  "main": "/src/notionAI.js",
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
