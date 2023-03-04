@@ -21,7 +21,7 @@ import { TOPICS, TONE, LANGUAGE } from './src/types.js';
 const notionAI = new NotionAI(process.env["TOKEN"], process.env["SPACE_ID"]);
 
 // usage example
-let pageTitle = "Scrum member summaary"
+let pageTitle = "Scrum member summary"
 let pageContent = "This document will introduce you to the members of a Scrum team, including the Scrum Master, the Product Owner, and the development team members"
 let selectedText = ""
 await notionAI.writingPrompt(prompt, pageTitle, selectedText, pageContent).then((text) => {
