@@ -5,9 +5,13 @@ This is a JavaScript module that provides a class called NotionAI for making req
 The NotionAI class has four methods:
 
 `writingTopic(topic, prompt)`: This method takes a topic and prompt as input and returns a result from the Notion API.
+
 `changeTone(tone, text)`: This method takes a tone and text as input and returns a result from the Notion API.
+
 `writingPromptType(type, title, text)`: This method takes a type, title, and text as input and returns a result from the Notion API.
+
 `translateText(language, text)`: This method takes a language and text as input and returns a result from the Notion API.
+
 
 The NotionAI class relies on the setting class for its configuration options, which include the Notion API token and space ID.
 
