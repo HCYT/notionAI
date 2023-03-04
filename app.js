@@ -18,7 +18,7 @@ let result = "";
 
 
 let prompt = "a joke"
-await notionAI.write(TOPICS.helpMeDraft, prompt).then((text) => {
+await notionAI.writingPrompt(prompt).then((text) => {
     result = text;
     console.log(`Writing with topic "${topic}": ${result}`);
 }).catch((err) => {
