@@ -2,30 +2,52 @@ import { setting } from './setting.js';
 
 export class NotionAI extends setting {
 
-    //helpMeWrite
 
-    async helpMeWrite(type, pageTitle, previousContent, restContent, prompt) {
-        const content = JSON.stringify({
-            type: type,
-            prompt: prompt,
-            pageTitle: pageTitle,
-            previousContent: previousContent,
-            restContent: restContent
-        });
-        const response = await this.request(content);
-        const result = this.parseResponse(response);
-        return result;
-    }
-
-    //continueWriting
-    async continueWriting(type, pageTitle, previousContent, restContent) {
-        const content = JSON.stringify({
-            type: type,
-            pageTitle: pageTitle,
-            previousContent: previousContent,
-            restContent: restContent
-        });
-        const response = await this.request(content);
+    async write(type, ...args) {
+        let content = {};
+        switch (type) {
+            case 'helpMeWrite':
+            case 'helpMeDraft':
+                content = {
+                    type: type,
+                    prompt: args[0]
+                };
+                break;
+            case 'helpMeEdit':
+                content = {
+                    type: type,
+                    prompt: args[0],
+                    pageTitle: args[1],
+                    pageContent: args[2],
+                    selectedText: args[3]
+                };
+                break;
+            case 'continueWriting':
+                content = {
+                    type: type,
+                    pageTitle: args[0],
+                    previousContent: args[1],
+                    restContent: args[2]
+                };
+                break;
+            case 'summarize':
+            case 'improveWriting':
+            case 'fixSpellingGrammar':
+            case 'explainThis':
+            case 'makeLonger':
+            case 'makeShorter':
+            case 'findActionItems':
+            case 'simplifyLanguage':
+                content = {
+                    type: type,
+                    pageTitle: args[0],
+                    selectedText: args[1]
+                };
+                break;
+            default:
+                throw new Error(`Invalid type: ${type}`);
+        }
+        const response = await this.request(JSON.stringify(content));
         const result = this.parseResponse(response);
         return result;
     }
