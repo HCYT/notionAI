@@ -2,13 +2,46 @@
 
 NotionAI.js is a JavaScript library that provides a simple and convenient interface for interacting with the Notion API. It includes functions for writing prompts, changing the tone of text, translating text, and more.
 
-## Installation (not ready yet)
+## Installation (not ready yet) 
+
+You can start by cloning or forking the project from GitHub.
 
 To install NotionAI.js, you can use npm:
 
 ```
 npm install notionai
 ```
+
+## usage ：
+
+```
+// setting and import
+import { NotionAI } from './src/NotionAI.js';
+import { TOPICS, TONE, LANGUAGE } from './src/types.js';
+const notionAI = new NotionAI(process.env["TOKEN"], process.env["SPACE_ID"]);
+
+// usage example
+let pageTitle = "Scrum member summaary"
+let pageContent = "This document will introduce you to the members of a Scrum team, including the Scrum Master, the Product Owner, and the development team members"
+let selectedText = ""
+await notionAI.writingPrompt(prompt, pageTitle, selectedText, pageContent).then((text) => {
+    result = text;
+    console.log(`Writing with topic "${topic}": ${result}`);
+}).catch((err) => {
+    console.error(err);
+});
+```
+
+Make sure to replace process.env["TOKEN"] and process.env["SPACE_ID"] with your actual Notion API token and space ID, respectively.
+
+## How to get the token and spaceId
+
+Make sure you subscribe to NotionAI; otherwise, you will only be able to use it 20 times.
+
+editing ...
+
+
+------------------------------------------
 
 The NotionAI class has four methods:
 
@@ -101,28 +134,6 @@ The NotionAI class relies on the setting class for its configuration options, wh
 To use the NotionAI class, you can import it and create a new instance with the Notion API token and space ID. Then, you can call any of its methods with the appropriate parameters to make a request to the Notion API.
 
 
-------
-## Example usage in app.js:
-
-```
-import { NotionAI } from './src/NotionAI.js';
-const notionAI = new NotionAI(process.env["TOKEN"], process.env["SPACE_ID"]);
-await notionAI.writingTopic(topic, prompt).then((text) => {
-    result = text;
-    console.log(`Writing with topic "${topic}": ${result}`);
-}).catch((err) => {
-    console.error(err);
-});
-```
-
-Make sure to replace process.env["TOKEN"] and process.env["SPACE_ID"] with your actual Notion API token and space ID, respectively.
-
-
-## How to get the token and spaceId
-
-Make sure you subscribe to NotionAI; otherwise, you will only be able to use it 20 times.
-
-editing ...
 
 ## Contributing
 Welcome to contribute to NotionAI.js by creating pull requests or issues. If you find any bugs or have suggestions for new features, please feel free to open an issue on the GitHub repository. We appreciate any contributions and will review them as soon as possible.
