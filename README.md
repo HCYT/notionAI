@@ -12,18 +12,23 @@ npm install notionai
 
 The NotionAI class has four methods:
 
-- `writingTopic(topic, prompt)`: This method takes a topic and prompt as input and returns a result from the Notion API.
+### helpMeWrite and continueWriting
+`writingTopic(topic, prompt)`: This method takes a topic and prompt as input and returns a result from the Notion API.
 
-- `changeTone(tone, text)`: This method takes a tone and text as input and returns a result from the Notion API.
-you can use the
+
+### changeTone of article
+`changeTone(tone, text)`: This method takes a tone and text as input and returns a result from the Notion API.
+
+You can use the option
+
 ``` 
-    TONE.professional
-    TONE.casual
-    TONE.straightforward
-    TONE.confident
-    TONE.friendly
+TONE.professional
+TONE.casual
+TONE.straightforward
+TONE.confident
+TONE.friendly
 ```
-usage
+#### usage
 
 ```
 let text = "This document provides an introduction to the composition of a Scrum team, including the Scrum Master, the Product Owner, and the development team members."
@@ -70,13 +75,16 @@ Sales Email - An email message sent to potential customers to introduce a produc
 Recruiting Email - An email message sent to job seekers to promote a job opportunity, explain the company's culture and values, and invite them to apply for the position.
 ```
 
-- `translateText(language, text)`: This method takes a language and text as input and returns a result from the Notion API.
+### Translate Article
+`translateText(language, text)`: This method takes a language and text as input and returns a result from the Notion API.
 
 The NotionAI class relies on the setting class for its configuration options, which include the Notion API token and space ID.
 
 To use the NotionAI class, you can import it and create a new instance with the Notion API token and space ID. Then, you can call any of its methods with the appropriate parameters to make a request to the Notion API.
 
-Example usage in app.js:
+
+------
+## Example usage in app.js:
 
 ```
 import { NotionAI } from './src/NotionAI.js';
