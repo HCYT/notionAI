@@ -82,7 +82,9 @@ Result
 This document will introduce you to the members of a Scrum team, including the Scrum Master, the Product Owner, and the development team members.
 
 
-- `writingPrompt(prompt, pageTitle, selectedText, pageContent)`: This method takes a type, title, and text as input and returns a result from the Notion API.
+### writingPrompt
+
+`writingPrompt(prompt, pageTitle, selectedText, pageContent)`: This method takes a type, title, and text as input and returns a result from the Notion API.
 
 ```
 Brainstorm Ideas - A process of generating a large number of creative ideas or solutions to a problem through group discussion or individual brainstorming.
