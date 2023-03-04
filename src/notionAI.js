@@ -10,7 +10,7 @@ export class NotionAI extends setting {
      * @returns {Promise<string>} - The result of the API request.
      * @throws {Error} - If an invalid type is provided.
      */
-    async write(type, ...args) {
+    async writing(type, ...args) {
         let content = {};
         switch (type) {
             case 'helpMeWrite':

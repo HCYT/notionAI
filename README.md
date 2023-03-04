@@ -21,12 +21,10 @@ import { TOPICS, TONE, LANGUAGE } from './src/types.js';
 const notionAI = new NotionAI(process.env["TOKEN"], process.env["SPACE_ID"]);
 
 // usage example
-let pageTitle = "Scrum member summary"
-let pageContent = "This document will introduce you to the members of a Scrum team, including the Scrum Master, the Product Owner, and the development team members"
-let selectedText = ""
-await notionAI.writingPrompt(prompt, pageTitle, selectedText, pageContent).then((text) => {
+let result = "";
+await notionAI.writing(TOPICS.makeLonger, "joke","Why did the scarecrow win an award? Because he was outstanding in his field.").then((text) => {
     result = text;
-    console.log(`Writing with topic "${topic}": ${result}`);
+    console.log(`Writing with topic "${TOPICS.makeLonger}": ${result}`);
 }).catch((err) => {
     console.error(err);
 });
@@ -49,11 +47,81 @@ You can refer to https://github.com/HCYT/notionAI/issues/1 to learn how to get t
 
 The NotionAI class has four methods:
 
-### helpMeWrite and continueWriting
-`writingTopic(topic, prompt)`: This method takes a topic and prompt as input and returns a result from the Notion API.
+### Write supports multiple types
+
+#### mode1
+If you use the 'helpMeWrite' or 'helpMeDraft' option, you can follow this example
+
+```
+let prompt="a joke"
+
+await notionAI.writing(TOPICS.helpMeDraft, prompt).then((text) => {
+    result = text;
+    console.log(`Writing with topic "${topic}": ${result}`);
+}).catch((err) => {
+    console.error(err);
+});
+
+```
+#### mode2
+
+If you use the 'helpMeEdit' option, you can follow this example
+
+```
+let result="";
+let prompt="help Me Edit the article "
+let pageTitle="the page title you already has"
+let pageContent="the page content you already has"
+let selectedText="you need ai help you edit content"
+
+await notionAI.writing(TOPICS.helpMeEdit,prompt, pageTitle,pageContent,selectedText).then((text) => {
+    result = text;
+    console.log(`Writing with topic "${topic}": ${result}`);
+}).catch((err) => {
+    console.error(err);
+});
+
+```
+
+### mode3
+
+If you use the 'continueWriting' option, you can follow this example
+
+```
+let result="";
+let pageTitle="the article title"
+let previousContent="the previous Content"
+let restContent="paragraph you need to continue"
+
+await notionAI.writing(TOPICS.helpMeEdit, pageTitle,previousContent,restContent).then((text) => {
+    result = text;
+    console.log(`Writing with topic "${topic}": ${result}`);
+}).catch((err) => {
+    console.error(err);
+});
+```
+### mode4
+
+
+If you use the `summarize`,`improveWriting`,`fixSpellingGrammar`,`explainThis`,`makeLonger`,`makeShorter`,`findActionItems`,`simplifyLanguage` option, you can follow this example
+
+```
+
+let result = "";
+let pageTitle="joke"
+let selectedText="joke","Why did the scarecrow win an award? Because he was outstanding in his field.";
+await notionAI.writing(TOPICS.makeLonger, pageTitle,selectedText).then((text) => {
+    result = text;
+    console.log(`Writing with topic "${TOPICS.makeLonger}": ${result}`);
+}).catch((err) => {
+    console.error(err);
+});
+
+```
 
 
 ### changeTone of article
+
 `changeTone(tone, text)`: This method takes a tone and text as input and returns a result from the Notion API.
 
 You can use the option

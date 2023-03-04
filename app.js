@@ -8,11 +8,19 @@ dotenv.config({ path: './.env' });
 const notionAI = new NotionAI(process.env["TOKEN"], process.env["SPACE_ID"]);
 import { TOPICS, TONE, LANGUAGE } from './src/types.js';
 
-
+let type = "";
+let title = "";
+let inputText = "";
+let topic = "helpMeDraft";
+//let prompt = "Help me write a beginner's guide for product managers";
 let result = "";
-await notionAI.write(TOPICS.makeLonger, "joke","Why did the scarecrow win an award? Because he was outstanding in his field.").then((text) => {
+
+
+
+let prompt = "a joke"
+await notionAI.write(TOPICS.helpMeDraft, prompt).then((text) => {
     result = text;
-    console.log(`Writing with topic "${TOPICS.makeLonger}": ${result}`);
+    console.log(`Writing with topic "${topic}": ${result}`);
 }).catch((err) => {
     console.error(err);
 });
