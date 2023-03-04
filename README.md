@@ -39,6 +39,13 @@ await notionAI.writingTopic(topic, prompt).then((text) => {
 
 Make sure to replace process.env["TOKEN"] and process.env["SPACE_ID"] with your actual Notion API token and space ID, respectively.
 
+
+## How to get the token and spaceId
+
+Make sure you subscribe to NotionAI; otherwise, you will only be able to use it 20 times.
+
+editing ...
+
 ## Contributing
 Welcome to contribute to NotionAI.js by creating pull requests or issues. If you find any bugs or have suggestions for new features, please feel free to open an issue on the GitHub repository. If you would like to contribute to the project, please submit a pull request with your changes. We appreciate any contributions and will review them as soon as possible.
 
