@@ -10,6 +10,7 @@ To install NotionAI.js, you can use npm:
 ```
 npm i @cyh0809/notionai
 ```
+
 ### usage
 
 ```
