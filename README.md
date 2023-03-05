@@ -16,18 +16,25 @@ npm install notionai
 
 ```
 // setting and import
-import { NotionAI } from './src/NotionAI.js';
-import { TOPICS, TONE, LANGUAGE } from './src/types.js';
+const { NotionAI } = require('./src/NotionAI.js')
+const { TOPICS, TONE, LANGUAGE } = require('./src/types.js')
 const notionAI = new NotionAI(process.env["TOKEN"], process.env["SPACE_ID"]);
 
 // usage example
-let result = "";
-await notionAI.writing(TOPICS.makeLonger, "joke","Why did the scarecrow win an award? Because he was outstanding in his field.").then((text) => {
-    result = text;
-    console.log(`Writing with topic "${TOPICS.makeLonger}": ${result}`);
-}).catch((err) => {
-    console.error(err);
-});
+let prompt = "";
+let topic ="poem"
+prompt = "give me a poem";
+async function example1(topic, prompt) {
+    
+    try {
+        const result = await notionAI.writingPrompt(prompt);
+        console.log(`Writing with topic "${topic}": ${result}`);
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+example1(topic,prompt);
 ```
 
 Make sure to replace process.env["TOKEN"] and process.env["SPACE_ID"] with your actual Notion API token and space ID, respectively.
@@ -50,14 +57,18 @@ The NotionAI supports multiple types:
 If you use the `helpMeWrite` or `helpMeDraft` option, you can follow this example
 
 ```
-let prompt="a joke"
+async function example2(topic, prompt) {
+    try {
+        const result = await notionAI.writing(topic, prompt);
+        console.log(`Writing with topic "${topic}": ${result}`);
+        return result;
+    } catch (err) {
+        console.error(err);
+    }
+}
 
-await notionAI.writing(TOPICS.helpMeDraft, prompt).then((text) => {
-    result = text;
-    console.log(`Writing with topic "${topic}": ${result}`);
-}).catch((err) => {
-    console.error(err);
-});
+const prompt="give me a joke";
+example2(TOPICS.helpMeDraft,prompt)
 
 ```
 
@@ -65,18 +76,23 @@ await notionAI.writing(TOPICS.helpMeDraft, prompt).then((text) => {
 If you use the `helpMeEdit` option, you can follow this example
 
 ```
-let result="";
 let prompt="help Me Edit the article "
 let pageTitle="the page title you already has"
 let pageContent="the page content you already has"
 let selectedText="you need ai help you edit content"
 
-await notionAI.writing(TOPICS.helpMeEdit,prompt, pageTitle,pageContent,selectedText).then((text) => {
-    result = text;
-    console.log(`Writing with topic "${topic}": ${result}`);
-}).catch((err) => {
-    console.error(err);
-});
+async function example3(topic, prompt, pageTitle, pageContent, selectedText) {
+    try {
+      const result = await notionAI.writing(topic, prompt, pageTitle, pageContent, selectedText);
+      console.log(`Writing with topic "${topic}": ${result}`);
+      return result;
+    } catch (err) {
+      console.error(err);
+      return err;
+    }
+  }
+
+  example3(TOPICS.helpMeEdit, prompt, pageTitle, pageContent, selectedText);
 
 ```
 
@@ -84,17 +100,20 @@ await notionAI.writing(TOPICS.helpMeEdit,prompt, pageTitle,pageContent,selectedT
 If you use the `continueWriting` option, you can follow this example
 
 ```
-let result="";
+
 let pageTitle="the article title"
 let previousContent="the previous Content"
 let restContent="paragraph you need to continue"
 
-await notionAI.writing(TOPICS.helpMeEdit, pageTitle,previousContent,restContent).then((text) => {
-    result = text;
-    console.log(`Writing with topic "${topic}": ${result}`);
-}).catch((err) => {
+async function example4(pageTitle, previousContent, restContent) {
+  try {
+    const text = await notionAI.writing(TOPICS.helpMeEdit, pageTitle, previousContent, restContent);
+    console.log(`Writing with topic "${TOPICS.helpMeEdit}": ${text}`);
+    return text;
+  } catch (err) {
     console.error(err);
-});
+  }
+}
 ```
 
 
@@ -103,15 +122,16 @@ If you use the `summarize`,`improveWriting`,`fixSpellingGrammar`,`explainThis`,`
 
 ```
 
-let result = "";
 let pageTitle="joke"
 let selectedText="joke","Why did the scarecrow win an award? Because he was outstanding in his field.";
-await notionAI.writing(TOPICS.makeLonger, pageTitle,selectedText).then((text) => {
-    result = text;
+async function example5(pageTitle, selectedText) {
+  try {
+    const result = await notionAI.writing(TOPICS.makeLonger, pageTitle, selectedText);
     console.log(`Writing with topic "${TOPICS.makeLonger}": ${result}`);
-}).catch((err) => {
+  } catch (err) {
     console.error(err);
-});
+  }
+}
 
 ```
 
@@ -133,13 +153,15 @@ TONE.friendly
 
 ```
 let text = "This document provides an introduction to the composition of a Scrum team, including the Scrum Master, the Product Owner, and the development team members."
-await notionAI.changeTone(TONE.professional, text).then((text) => {
-    result = text;
-    console.log(`Writing with topic "${topic}": ${result}`);
-}).catch((err) => {
-    console.error(err);
-});
 
+async function example6() {
+  try {
+    const result = await notionAI.changeTone(TONE.professional, text);
+    console.log(`Writing with topic "${topic}": ${result}`);
+  } catch (err) {
+    console.error(err);
+  }
+}
 
 ```
 Result
@@ -201,12 +223,14 @@ usage
 ```
 let text = "This document provides an introduction to the composition of a Scrum team, including the Scrum Master, the Product Owner, and the development team members."
 
-await notionAI.translateText(LANGUAGE.chinese, text).then((text) => {
-    result = text;
+async function myFunction() {
+  try {
+    const result = await notionAI.translateText(LANGUAGE.chinese, text);
     console.log(`translateText "${topic}": ${result}`);
-}).catch((err) => {
+  } catch (err) {
     console.error(err);
-});
+  }
+}
 
 ```
 
