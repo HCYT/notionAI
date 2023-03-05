@@ -55,4 +55,10 @@ const LANGUAGE = {
 //     salesEmail: "SalesEmail",
 //     recruitingEmail: "RecruitingEmail"
 // };
-export { TONE, TOPICS, LANGUAGE };
+
+
+module.exports = {
+    TOPICS,
+    TONE,
+    LANGUAGE,
+  };

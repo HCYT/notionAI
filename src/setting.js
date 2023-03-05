@@ -1,9 +1,9 @@
 /**
 This is a setting class used to configure and send requests to the Notion API.
 */
-import { v4 as uuid } from 'uuid';
+const { v4: uuid } = require('uuid');
 const URL = "https://www.notion.so/api/v3/getCompletion";
-export class setting {
+ class setting {
 
     constructor(token, spaceId) {
         this.stream = false;
@@ -66,4 +66,4 @@ export class setting {
     }
 
 }
-export default setting;
+module.exports = { setting }

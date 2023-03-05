@@ -1,6 +1,6 @@
-import { setting } from './setting.js';
 
-export class NotionAI extends setting {
+const { setting } = require('./setting.js')
+class NotionAI extends setting {
 
     /**
      * Sends a request to the Notion API based on the given type and arguments.
@@ -135,3 +135,5 @@ export class NotionAI extends setting {
         return result;
     }
 }
+
+module.exports = { NotionAI }
