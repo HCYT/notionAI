@@ -9,7 +9,7 @@ You can start by cloning or forking the project from GitHub.
 To install NotionAI.js, you can use npm:
 
 ```
-npm install notionai
+npm i @cyh0809/notionai
 ```
 
 ### usage
