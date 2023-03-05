@@ -53,6 +53,49 @@ You can refer to https://github.com/HCYT/notionAI/issues/1 to learn how to get t
 
 The NotionAI supports multiple types:
 
+## option usage
+### TOPICS, TONE, LANGUAGE
+```
+/// TOPICS
+TOPICS.helpMeWrite
+TOPICS.helpMeEdit
+TOPICS.helpMeDraft
+TOPICS.continueWriting
+TOPICS.changeTone
+TOPICS.summarize
+TOPICS.improveWriting
+TOPICS.fixSpellingGrammar
+TOPICS.translate
+TOPICS.explainThis
+TOPICS.makeLonger
+TOPICS.makeShorter
+TOPICS.findActionItems
+TOPICS.simplifyLanguage
+/// TONE
+TONE.professional
+TONE.casual
+TONE.straightforward
+TONE.confident
+TONE.friendly
+/// LANGUAGE
+LANGUAGE.english
+LANGUAGE.korean
+LANGUAGE.chinese
+LANGUAGE.japanese
+LANGUAGE.spanish
+LANGUAGE.russiab
+LANGUAGE.french
+LANGUAGE.german
+LANGUAGE.italian
+LANGUAGE.portuguese
+LANGUAGE.dutch
+LANGUAGE.indonesia
+LANGUAGE.tagalog
+LANGUAGE.vietnamese
+```
+
+## usage
+
 If you use the `helpMeWrite` or `helpMeDraft` option, you can follow this example
 
 ```
