@@ -38,7 +38,7 @@ example1(topic,prompt);
 
 Make sure to replace process.env["TOKEN"] and process.env["SPACE_ID"] with your actual Notion API token and space ID, respectively.
 
-The NotionAI class relies on the setting class for its configuration options, which include the Notion API token and space ID.
+The NotionAI class relies on the setting class for its configuration options, which include the Notion API token and spaceId.
 
 To use the NotionAI class, you can import it and create a new instance with the Notion API token and space ID. Then, you can call any of its methods with the appropriate parameters to make a request to the Notion API.
 
