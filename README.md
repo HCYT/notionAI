@@ -47,7 +47,6 @@ You can refer to https://github.com/HCYT/notionAI/issues/1 to learn how to get t
 
 The NotionAI supports multiple types:
 
-#### writing-mode1
 If you use the `helpMeWrite` or `helpMeDraft` option, you can follow this example
 
 ```
@@ -61,7 +60,7 @@ await notionAI.writing(TOPICS.helpMeDraft, prompt).then((text) => {
 });
 
 ```
-#### writing-mode2
+
 
 If you use the `helpMeEdit` option, you can follow this example
 
@@ -81,7 +80,6 @@ await notionAI.writing(TOPICS.helpMeEdit,prompt, pageTitle,pageContent,selectedT
 
 ```
 
-### writing-mode3
 
 If you use the `continueWriting` option, you can follow this example
 
@@ -98,7 +96,7 @@ await notionAI.writing(TOPICS.helpMeEdit, pageTitle,previousContent,restContent)
     console.error(err);
 });
 ```
-### writing-mode4
+
 
 
 If you use the `summarize`,`improveWriting`,`fixSpellingGrammar`,`explainThis`,`makeLonger`,`makeShorter`,`findActionItems`,`simplifyLanguage` option, you can follow this example
