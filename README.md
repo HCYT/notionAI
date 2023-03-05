@@ -2,10 +2,9 @@
 
 NotionAI.js is a JavaScript library that provides a simple and convenient interface for interacting with the Notion API. It includes functions for writing prompts, changing the tone of text, translating text, and more.
 
-## Installation (not ready yet) 
+## Installation 
 
-You can start by cloning or forking the project from GitHub.
-
+To get started, you can either clone or fork the project from GitHub, or use "npm install" to install it.
 To install NotionAI.js, you can use npm:
 
 ```
