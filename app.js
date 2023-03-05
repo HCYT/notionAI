@@ -60,13 +60,3 @@ async function example3(topic, prompt, pageTitle, pageContent, selectedText) {
       console.error(err);
     }
   }
-  
-  let text = "This document provides an introduction to the composition of a Scrum team, including the Scrum Master, the Product Owner, and the development team members."
-
-  try {
-    const result = await notionAI.translateText(LANGUAGE.chinese, text);
-    console.log(`translateText "${topic}": ${result}`);
-  } catch (err) {
-    console.error(err);
-  }
-  
