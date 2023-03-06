@@ -291,5 +291,5 @@ async function myFunction() {
 Welcome to contribute to NotionAI.js by creating pull requests or issues. If you find any bugs or have suggestions for new features, please feel free to open an issue on the GitHub repository. We appreciate any contributions and will review them as soon as possible.
 
 ## License
-NotionAI is licensed under the MIT License.
+NotionAI is licensed under the [MIT](https://github.com/HCYT/notionAI/blob/master/LICENSE) License.
 
