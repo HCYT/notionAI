@@ -12,9 +12,9 @@
     "uuid": "^9.0.0"
   },
   "name": "@cyh0809/notionai",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "You can perform AI operations through the NotionAI API.",
-  "main": "/src/notionAI.js",
+  "main": "./index.js",
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
