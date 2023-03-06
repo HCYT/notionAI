@@ -12,7 +12,7 @@
     "uuid": "^9.0.0"
   },
   "name": "@cyh0809/notionai",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "You can perform AI operations through the NotionAI API.",
   "main": "./index.js",
   "devDependencies": {},
