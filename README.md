@@ -1,3 +1,9 @@
+# Hello user
+
+If you need the latest information or want to raise an issue, please visit my Github page. Note that the NPM page will only be updated when new versions are released.
+
+I just fixed an issue that prevented NPM from being referenced correctly. (2023/3/6)
+
 # NotionAI.js
 
 NotionAI.js is a JavaScript library that provides a simple and convenient interface for interacting with the Notion API. It includes functions for writing prompts, changing the tone of text, translating text, and more.
@@ -15,7 +21,7 @@ npm i @cyh0809/notionai
 
 ```
 // setting and import
-const { NotionAI } = require('@cyh0809/notionai')
+const { NotionAI,TOPICS,TONE,LANGUAGE } = require('@cyh0809/notionai')
 const dotenv = require('dotenv')
 dotenv.config({ path: './.env' });
 const notionAI = new NotionAI(process.env["TOKEN"], process.env["SPACE_ID"]);
