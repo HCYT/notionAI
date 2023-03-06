@@ -1,12 +1,8 @@
-const koa = require('koa')
-const Router = require('@koa/router')
 const { NotionAI } = require('./src/NotionAI.js')
 const dotenv = require('dotenv')
 const { TOPICS, TONE, LANGUAGE } = require('./src/types.js')
-const router = new Router();
-const app = new koa();
 dotenv.config({ path: './.env' });
-const notionAI = new NotionAI(process.env["TOKEN"], process.env["SPACE_ID"]);
+const notionAI = new NotionAI(process.env["NOTION_TOKEN"], process.env["NOTION_SPACE_ID"]);
 
 
 let prompt = "";
