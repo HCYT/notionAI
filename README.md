@@ -15,9 +15,11 @@ npm i @cyh0809/notionai
 
 ```
 // setting and import
-const { NotionAI } = require('./src/NotionAI.js')
-const { TOPICS, TONE, LANGUAGE } = require('./src/types.js')
+const { NotionAI } = require('@cyh0809/notionai')
+const dotenv = require('dotenv')
+dotenv.config({ path: './.env' });
 const notionAI = new NotionAI(process.env["TOKEN"], process.env["SPACE_ID"]);
+
 
 // usage example
 let prompt = "";
