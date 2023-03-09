@@ -46,7 +46,7 @@ async function example1(topic, prompt) {
 example1(topic,prompt);
 ```
 
-Make sure to replace process.env["TOKEN"] and process.env["SPACE_ID"] with your actual Notion API token and space ID, respectively.
+Make sure to replace process.env["NOTION_TOKEN"] and process.env["NOTION_SPACE_ID"] with your actual Notion API token and spaceId, respectively.
 
 The NotionAI class relies on the setting class for its configuration options, which include the Notion API token and spaceId.
 
