@@ -2,7 +2,9 @@
 
 If you need the latest information or want to raise an issue, please visit my Github page. Note that the NPM page will only be updated when new versions are released.
 
-I just fixed an issue that prevented NPM from being referenced correctly. (2023/3/6)
+Please use the latest version, v1.0.4.
+
+The next version will be v1.1.0, as referenced in https://github.com/HCYT/notionAI/issues/7
 
 # NotionAI.js
 
