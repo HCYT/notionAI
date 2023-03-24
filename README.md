@@ -278,7 +278,7 @@ let text = "This document provides an introduction to the composition of a Scrum
 async function myFunction() {
   try {
     const result = await notionAI.translateText(LANGUAGE.chinese, text);
-    console.log(`translateText "${topic}": ${result}`);
+    console.log(`translateText : ${result}`);
   } catch (err) {
     console.error(err);
   }
